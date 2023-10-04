@@ -8,6 +8,13 @@ trends = df.groupby("Producto")["Cantidad"].sum()
 plt.bar(trends.index, trends.values)
 plt.xlabel("Producto")
 plt.ylabel("Cantidad")
-plt.title("Ventas")
+plt.title("Sales Trends")
+
+best_selling = trends.idxmax()
+least_selling = trends.idxmin()
+
+print(f"La bebida mejor vendida fue: {best_selling}")
+print(f"La bebida peor vendida fue: {least_selling}")
+
 plt.xticks(rotation=45)
 plt.show()
